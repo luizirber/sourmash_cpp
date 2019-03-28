@@ -2,6 +2,7 @@
 #include "kmer_min_hash.hh"
 
 using namespace std;
+using namespace sourmash;
 
 int main() {
   KmerMinHash mh(2, 2, false, 42, 0);
