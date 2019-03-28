@@ -1,0 +1,7 @@
+[submodule "deps/cmake-cargo"]
+	path = deps/cmake-cargo
+	url = https://github.com/AndrewGaspar/cmake-cargo.git
+[submodule "sourmash"]
+	path = sourmash
+	url = https://github.com/dib-lab/sourmash
+	branch = ukhs_sig
