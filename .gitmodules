@@ -4,4 +4,4 @@
 [submodule "sourmash"]
 	path = sourmash
 	url = https://github.com/dib-lab/sourmash
-	branch = ukhs_sig
+	branch = rust/cpp_header
