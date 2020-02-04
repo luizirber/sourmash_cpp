@@ -4,7 +4,7 @@
 #--------------------------------------------------------
 
 cmake_minimum_required (VERSION 3.10)
-project (sourmash_cpp)
+project (sourmash_cpp LANGUAGES CXX)
 
 # Boiler plate to import cmake-cargo CMake modules
 list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/deps/cmake-cargo/cmake")
@@ -30,6 +30,3 @@ target_include_directories(sourmash_cpp PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/sour
 
 # This links static sourmash
 target_link_libraries(sourmash_cpp sourmash-static)
-
-# This links shared rust_hello
-# target_link_libraries(say_hello rust_hello-shared)
