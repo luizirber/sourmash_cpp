@@ -5,6 +5,7 @@
 
 cmake_minimum_required (VERSION 3.10)
 project (sourmash_cpp LANGUAGES CXX)
+set(CMAKE_CXX_STANDARD 11)
 
 # Boiler plate to import cmake-cargo CMake modules
 list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/deps/cmake-cargo/cmake")
@@ -23,7 +24,6 @@ add_custom_target(sourmash-include DEPENDS ${CMAKE_CURRENT_SOURCE_DIR}/sourmash/
 
 # Defines the sourmash_cpp executable
 add_executable(sourmash_cpp src/main.cpp)
-target_compile_features(sourmash_cpp PRIVATE cxx_std_11)
 
 add_dependencies(sourmash_cpp sourmash-include)
 target_include_directories(sourmash_cpp PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/sourmash/include)

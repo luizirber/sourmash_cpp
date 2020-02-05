@@ -1,0 +1,38 @@
+name: C/C++ CI
+
+on: [push]
+
+jobs:
+  build-unix:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-latest]
+    steps:
+    - uses: actions/checkout@v1
+      with:
+        submodules: true
+    - name: configure
+      run: mkdir build && cd build && cmake -DCMAKE_CXX_FLAGS="-Werror" ..
+    - name: build
+      run: cmake --build build
+    - name: test
+      run: cd build && ./sourmash_cpp
+
+  build-windows:
+    runs-on: windows-latest
+    steps:
+    - uses: actions/checkout@v1
+      with:
+        submodules: true
+    - name: configure
+      run: |
+        mkdir build
+        cd build
+        cmake ..
+    - name: build
+      run: cmake --build build --config Debug
+    - name: test
+      run: |
+        cd build
+        ./sourmash_cpp
