@@ -1,12 +1,12 @@
 #include <iostream>
-#include "kmer_min_hash.hh"
+#include "sourmash.hpp"
 
 using namespace std;
 using namespace sourmash;
 
 int main() {
-  KmerMinHash mh(2, 2, false, false, false, 42, 0);
-  KmerMinAbundance ma(2, 2, false, false, false, 42, 0);
+  MinHash mh(2, 2, false, false, false, 42, 0);
+  MinAbundance ma(2, 2, false, false, false, 42, 0);
 
   mh.add_sequence("AAGTTGCA");
   cout << "mh: Sequence added " << "AAGTTGCA" << endl;

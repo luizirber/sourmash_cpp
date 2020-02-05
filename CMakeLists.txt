@@ -20,7 +20,7 @@ include(Cargo)
 
 add_crate(sourmash/Cargo.toml)
 
-add_custom_target(sourmash-include DEPENDS ${CMAKE_CURRENT_SOURCE_DIR}/sourmash/include/minhash.hpp)
+add_custom_target(sourmash-include DEPENDS ${CMAKE_CURRENT_SOURCE_DIR}/sourmash/include/sourmash.hpp)
 
 # Defines the sourmash_cpp executable
 add_executable(sourmash_cpp src/main.cpp)
